@@ -1,0 +1,364 @@
+* {
+    font-family: monospace;
+    color: black;
+}
+
+#display-box {
+    z-index: 10;
+    margin: auto;
+    padding: 1vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 2px solid #000 !important;
+    border-radius: 10px;
+    transition: all ease-in 0.2s !important;
+    min-height: 420px;
+}
+
+#display-box:hover {
+    box-shadow: 10px 10px #000;
+    transition: all ease-in 0.2s;
+    opacity: 1 !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    background:
+        linear-gradient(to right,
+            black, black),
+        linear-gradient(to right,
+            rgba(255, 0, 0, 1),
+            rgba(255, 0, 180, 1),
+            rgba(0, 100, 200, 1));
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+a:hover {
+    background-size: 0 3px, 100% 3px;
+}
+
+h1,
+.checker {
+    font-family: 'DM Sans', sans-serif;
+    user-select: none;
+}
+
+#text-input {
+    z-index: 10;
+    outline: none;
+    margin-right: 15px;
+    padding: 7px 0 7px 14px;
+    border: 3px solid rgb(150, 150, 150);
+    box-shadow: 0px 0px 0px 1px rgb(90, 90, 90),
+        inset 0px 0px 0px 1px rgb(90, 90, 90),
+        1px 2px 0px 2px rgb(100, 100, 100);
+    border-radius: 0.3em;
+    font-family: 'DM Sans', sans-serif;
+    display: flex-start;
+    color: black;
+}
+
+#check-btn {
+    user-select: none;
+    margin: auto;
+    z-index: 10;
+
+    padding: 5px 15px;
+    outline: none;
+    border: 3px solid white;
+    box-shadow: 0px 0px 0px 1px rgb(90, 90, 90),
+        inset 0px 0px 0px 1px rgb(90, 90, 90),
+        0px 2px 0px 2px rgb(100, 100, 100);
+    text-shadow: 0px -1px rgb(90, 90, 90),
+        -1px 0px rgb(90, 90, 90);
+    border-radius: 0.3em;
+    background-color: rgb(90, 90, 90);
+
+    font-family: 'DM Sans', sans-serif;
+    display: flex-start;
+    color: white;
+}
+
+#check-btn:hover,
+#check-btn:focus {
+    cursor: pointer;
+    outline: 2px solid black;
+    background-color: black;
+    transition: all ease-in 0.2s !important;
+}
+
+#check-btn:active {
+    background-color: rgb(75, 75, 75);
+    box-shadow: 0px 0px 0px 1px rgb(90, 90, 90),
+        inset 0px 0px 0px 1px rgb(90, 90, 90),
+        0px 1px 0px 2px rgb(100, 100, 100);
+}
+
+#result {
+    margin: 15px auto auto auto;
+    word-wrap: break-word;
+}
+
+.images {
+    user-select: none;
+}
+
+/* idk a note on palindromes
+span {
+    background: none repeat scroll 0 0 #F8F8F8;
+    border: 5px solid #DFDFDF;
+    color: #717171;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 430px;
+    left: 80px;
+    width: 75%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility, all ease-in 0.2s !important;
+}
+p:hover span {
+    visibility: visible;
+    opacity: 1;
+}
+*/
+
+/* For Desktop and Laptop View */
+@media screen and (min-width: 992px) {
+
+    #display-box {
+        width: 31.25vw;
+    }
+
+    h1 {
+        font-size: 5.2vw;
+    }
+
+    .checker {
+        font-size: 6.77vw;
+    }
+
+    #intro {
+        margin-top: -3.13vw;
+        font-size: 1.09vw;
+    }
+
+    #text-input {
+        margin-top: 0.52vw;
+        width: 15.47vw;
+        font-size: 0.9375vw;
+        padding: 0.52vw;
+    }
+
+    #check-btn {
+        width: 5.73vw;
+        padding: 0.52vw;
+        font-size: 0.94vw;
+    }
+
+    #result {
+        font-size: 1.25vw;
+        width: 22.92vw;
+        padding: 0.52vw;
+    }
+
+    hr {
+        margin-bottom: 2.6vw;
+        width: 23vw;
+    }
+
+    #apple,
+    #evilApple {
+        visibility: hidden;
+    }
+
+    #coco,
+    #strawberry,
+    #rainbow,
+    #cloud,
+    #sun,
+    #coffee {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    #coco {
+        transform: translate(-160%, -30%);
+        width: 25vw;
+    }
+
+    #strawberry {
+        transform: translate(60%, -30%);
+        width: 27vw;
+    }
+
+    #cloud {
+        z-index: -10;
+        transform: translate(-240%, -150%);
+        width: 13.02vw;
+    }
+
+    #rainbow {
+        z-index: -10;
+        transform: translate(150%, -130%);
+        width: 13.5vw;
+    }
+
+    #sun {
+        z-index: -10;
+        width: 11.46vw;
+        transform: translate(-380%, -140%)
+    }
+
+    #coffee {
+        z-index: -10;
+        width: 10.42vw;
+        transform: translate(300%, -200%);
+    }
+
+}
+
+/* Tablet view */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    #display-box {
+        width: 41.25vw;
+    }
+
+    h1 {
+        font-size: 7.2vw;
+    }
+
+    .checker {
+        font-size: 9.77vw;
+    }
+
+    #intro {
+        margin-top: -3.13vw;
+        font-size: 1.5vw;
+    }
+
+    #text-input {
+        margin-top: 0.52vw;
+        width: 19.47vw;
+        font-size: 1.5vw;
+        padding: 0.52vw;
+    }
+
+    #check-btn {
+        width: 8.73vw;
+        padding: 0.52vw;
+        font-size: 1.5vw;
+    }
+
+    #result {
+        font-size: 1.75vw;
+        width: 30vw;
+        padding: 0.52vw;
+    }
+
+    hr {
+        margin-bottom: 2.6vw;
+        width: 32vw;
+    }
+
+    #coco,
+    #strawberry,
+    #rainbow,
+    #cloud,
+    #sun,
+    #coffee {
+        display: none;
+    }
+
+    #apple,
+    #evilApple {
+        visibility: visible;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    #apple {
+        transform: translate(-140%, -40%);
+        width: 40vw;
+    }
+
+    #evilApple {
+        transform: translate(66%, -40%);
+        width: 30vw;
+    }
+
+}
+
+/* Phone view */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    #display-box {
+        width: 65vw;
+    }
+
+    h1 {
+        font-size: 10vw;
+    }
+
+    .checker {
+        font-size: 13.9vw;
+    }
+
+    #intro {
+        margin-top: -4.2vw;
+        font-size: 2.2vw;
+    }
+
+    #text-input {
+        margin-top: 1.52vw;
+        margin-left: 1.5vw;
+        width: 41.2vw;
+        font-size: 2vw;
+        padding: 0.52vw;
+    }
+
+    #check-btn {
+        width: 43.2vw;
+        margin-top: 2vw;
+        padding: 0.52vw;
+        font-size: 2vw;
+    }
+
+    #result {
+        font-size: 2.25vw;
+        width: 40vw;
+        padding: 1.0vw;
+    }
+
+    hr {
+        margin-bottom: 2.6vw;
+        width: 45vw;
+    }
+
+    #coco,
+    #strawberry,
+    #rainbow,
+    #cloud,
+    #sun,
+    #coffee,
+    #apple,
+    #evilApple {
+        display: none;
+    }
+
+}
